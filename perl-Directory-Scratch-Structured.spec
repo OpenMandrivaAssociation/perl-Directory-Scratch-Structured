@@ -42,7 +42,7 @@ Directory::Scratch manpage.
 ./Build
 
 %check
-rm -f t/003_perlcritic.t
+rm -f t/003_perl_critic.t
 ./Build test
 
 %install
