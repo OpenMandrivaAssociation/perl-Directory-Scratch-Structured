@@ -25,8 +25,8 @@ BuildRequires: perl(Test::Pod)
 BuildRequires: perl(Test::Pod::Coverage)
 BuildRequires: perl(Test::Spelling)
 BuildRequires: perl(Test::Strict)
-BuildRequires: perl(Test::Warn)
 BuildRequires: perl(Module::Build::Compat)
+BuildRequires: perl(Module::Build)
 BuildArch: noarch
 BuildRoot:  %{_tmppath}/%{name}-%{version}
 
@@ -38,15 +38,15 @@ Directory::Scratch manpage.
 %setup -q -n %{module}-%{version} 
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-%make
+%{__perl} Build.PL installdirs=vendor
+./Build
 
 %check
-make test
+./Build test
 
 %install
 rm -rf %{buildroot}
-%makeinstall_std
+./Build install destdir=%{buildroot}
 
 %clean
 rm -rf %{buildroot}
