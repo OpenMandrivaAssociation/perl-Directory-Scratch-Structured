@@ -21,7 +21,6 @@ BuildRequires: perl(Test::Distribution)
 BuildRequires: perl(Test::Exception)
 BuildRequires: perl(Test::NoWarnings)
 BuildRequires: perl(Test::Warn)
-BuildRequires: perl(Test::Perl::Critic)
 BuildRequires: perl(Test::Pod)
 BuildRequires: perl(Test::Pod::Coverage)
 BuildRequires: perl(Test::Spelling)
@@ -43,6 +42,7 @@ Directory::Scratch manpage.
 ./Build
 
 %check
+rm -f t/003_perlcritic.t
 ./Build test
 
 %install
