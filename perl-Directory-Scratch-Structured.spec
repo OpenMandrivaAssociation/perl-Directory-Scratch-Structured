@@ -1,6 +1,6 @@
 %define module   Directory-Scratch-Structured
-%define version    0.03
-%define release    %mkrel 2
+%define version    0.04
+%define release    %mkrel 1
 
 Name:       perl-%{module}
 Version:    %{version}
